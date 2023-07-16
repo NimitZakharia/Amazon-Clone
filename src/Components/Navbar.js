@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Navbar.css"; 
 import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Header() {
   return (
@@ -25,6 +26,11 @@ function Header() {
             <div className='Navbar__option'>    
                 <span className='Navbar__optionLineOne'>Your Prime</span>
                 <span className='Navbar__optionLineTwo'>Deals</span>
+            </div>
+            <div className='Navbar__cart'>
+                <ShoppingCartIcon className='Navbar_shoppingCartIcon'/>
+                <span className='Navbar__optionLineTwo Navbar__cartCount'>0</span>
+
             </div>
         </div>
     </div>

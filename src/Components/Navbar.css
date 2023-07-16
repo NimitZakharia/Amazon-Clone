@@ -52,6 +52,17 @@
 }
 .Navbar__optionLineTwo{
     font-size: 13px;
-    font-weight: 850;
-    
+    font-weight: 800;
+}
+.Navbar__cart{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.Navbar__cartCount{
+    margin-left: 7px;
+    margin-right: 10px;
+}
+.Navbar_shoppingCartIcon{
+    margin-left: 10px;
 }
