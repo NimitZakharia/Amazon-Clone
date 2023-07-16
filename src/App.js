@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Components/Navbar';
+import Home from './Components/Home';
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       
       <Header/>
+      <Home/>
     </div>
   );
 }

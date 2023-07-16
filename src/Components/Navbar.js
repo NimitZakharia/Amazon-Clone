@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className='Navbar'>
         {/*Amazon logo */}
-        <img className="Navbar__logo" src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" />
+        <img className="Navbar__logo" src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt='amazon_logo' />
         {/* Search bar */}
         <div className='Navbar__search'>
             <input className='Navbar__searchInput' placeholder='Search Amazon.in'/>
