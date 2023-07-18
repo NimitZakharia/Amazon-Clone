@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link} from "react-router-dom";
 import { useStateValue } from '../stateProvider';
 function Header() {
-    const [{cart},dispatch] = useStateValue();
+    const [{cart}] = useStateValue();
   return (
     <div className='Navbar'>
         {/*Amazon logo */}

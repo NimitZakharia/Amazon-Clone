@@ -3,13 +3,14 @@ import { useStateValue } from '../stateProvider';
 import "./Product.css"
 
 
-function Product({title,image,price,rating}) {
+function Product({id,title,image,price,rating}) {
   const [state,dispatch] =useStateValue();
 
   const addToCart =()=>{
     dispatch({
       type:"ADD_TO_CART",
       item :{
+        id:id,
         title:title,
         image:image,
         price:price,
