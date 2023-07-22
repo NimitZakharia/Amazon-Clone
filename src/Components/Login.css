@@ -1,0 +1,77 @@
+.Login{
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Login__image{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    object-fit: contain;
+    width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.Login__container{
+    width:300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 20px;
+}
+.Login__container >form > h1{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.Login__container >form > h5{
+    padding: 1px;
+    margin-bottom: 5px;
+}
+.Login__container >form  > input{
+    height: 30px;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.Login__container >form  > button{
+    background-color: #f0c14b;
+    font-weight: 500;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid;
+    margin-top: 10px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
+.Login__container >form  > p{
+   margin-top: 15px;
+   font-size: 12px;
+    
+}
+.Login__container2{
+    width:300px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.Login__container2>p{
+    padding-bottom: 10px;
+}
+.Login__container2>button{
+    background-color:white;
+    font-weight: 500;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid black;
+    margin-top: 10px;
+    color: #111;
+}
