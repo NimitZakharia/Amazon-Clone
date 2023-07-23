@@ -4,8 +4,16 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link} from "react-router-dom";
 import { useStateValue } from '../stateProvider';
+import { auth } from "./firebase.js";
+import {  signOut } from "firebase/auth";
+
 function Header() {
-    const [{cart}] = useStateValue();
+    const [{cart,user}] = useStateValue();
+    const handleAuth=()=>{
+        if(user){
+            signOut(auth);
+        }
+    }
   return (
     <div className='Navbar'>
         {/*Amazon logo */}
@@ -19,10 +27,10 @@ function Header() {
         </div>
 
         <div className='Navbar__options'>
-            <Link to="login">
-            <div className='Navbar__option'>    
+            <Link to={!user &&"/login"}>
+            <div onClick={handleAuth} className='Navbar__option'>    
                 <span className='Navbar__optionLineOne'>Hello Guest</span>
-                <span className='Navbar__optionLineTwo'>Sign in</span>
+                <span className='Navbar__optionLineTwo'>{user? 'Sign Out':"Sign In"}</span>
             </div>
             </Link>
             <div className='Navbar__option'>    

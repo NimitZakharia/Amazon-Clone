@@ -1,27 +1,44 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import {auth} from "./firebase.js"
+import { auth } from "./firebase.js";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 function Login() {
-  const [email,setEmail]=useState();
-  const [password,setPassword]=useState();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
 
-  const Signin = e=>{
-    e.preventDefualt();
-    
 
-  }
-  const Register = ()=>{
+  const Signin = (e) => {
     //e.preventDefualt();
-    auth.createUserWithEmailAndPassword(email,password)
-    .then((auth)=>{
-      //sucessfully created a user
-      console.log(auth);
-    })
-    .catch(error=>alert(error.message))
-    //some Error
-  }
+    try {
+      const user = signInWithEmailAndPassword(auth, email, password).then(
+        navigate("/")
+      )
+      console.log(auth.currentUser);
+      //logout();
+      
+    } catch (error) {
+
+      console.log(error.message);
+    }
+  };
+  const Register = () => {
+    //e.preventDefualt();
+    try {
+      const user = createUserWithEmailAndPassword(auth, email, password).then(navigate('/'))
+      
+      console.log(auth.currentUser);
+      
+    } catch (error) {
+      console.log(error.message);
+    }
+
+  };
+
+ 
   return (
     <div className="Login">
       <Link to="/">
@@ -35,11 +52,26 @@ function Login() {
         <form>
           <h1>Sign-in</h1>
           <h5>Email</h5>
-          <input value={email} onChange={e=>setEmail(e.target.value)} placeholder=" Enter your Email"/>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder=" Enter your Email"
+          />
           <h5>Password</h5>
-          <input value={password} onChange={e=>setPassword(e.target.value)} type="password" placeholder=" Enter your password"/>
-          <button type="submit" onClick={Signin}>Sign In</button>
-          <p>By continuing, you agree to the <Link to="/">Fake cloned Amazon's</Link> Conditions of Use and Privacy Notice.</p>
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder=" Enter your password"
+          />
+          <button type="submit" onClick={Signin}>
+            Sign In
+          </button>
+          <p>
+            By continuing, you agree to the{" "}
+            <Link to="/">Fake cloned Amazon's</Link> Conditions of Use and
+            Privacy Notice.
+          </p>
         </form>
       </div>
       <div className="Login__container2">
