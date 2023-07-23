@@ -1,13 +1,15 @@
 import React from 'react'
 import "./Home.css"
 import Product from './Product'
+import Carousel from './Carousel'
+import {slides} from '../Image-data/carousel.json';
 
 function Home() {
   return (
     <div className='Home'>
         <div className='Home__container'>
-           
-            <img  alt="prime-add-img" className="Home__img" src='https://m.media-amazon.com/images/I/71JFH2uM8JL._SX3000_.jpg'/>
+           <Carousel data={slides}/>
+            {/*<img  alt="prime-add-img" className="Home__img" src='https://m.media-amazon.com/images/I/71JFH2uM8JL._SX3000_.jpg'/>*/}
             <div className='Home__row'>
                 <Product
                 id={1236}

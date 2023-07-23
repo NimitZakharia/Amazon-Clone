@@ -1,0 +1,32 @@
+{
+    "slides":[
+        {
+            "src":"https://m.media-amazon.com/images/I/71+dSnoEQxL._SX3000_.jpg",
+            "alt":"image1"
+        },
+        {
+            "src":"https://images-eu.ssl-images-amazon.com/images/G/31/img22/Unrec/TallHero_3000X1200_Unrec._CB593464763_.jpg",
+            "alt":"image2"
+        },
+        {
+            "src":"https://m.media-amazon.com/images/I/6122dS+1gcL._SX3000_.jpg",
+            "alt":"image3"
+        },
+        {
+            "src":"https://m.media-amazon.com/images/I/61mSBHhXXEL._SX3000_.jpg",
+            "alt":"image4"
+        },
+        {
+            "src":"https://m.media-amazon.com/images/I/817K-C-nmOL._SX3000_.png",
+            "alt":"image5"
+        },
+        {
+            "src":"https://m.media-amazon.com/images/I/71OemsE2DQL._SX3000_.jpg",
+            "alt":"image6"
+        },
+        {
+            "src":"https://m.media-amazon.com/images/I/71gU2ywIsuL._SX3000_.jpg",
+            "alt":"image7"
+        } 
+    ]
+}

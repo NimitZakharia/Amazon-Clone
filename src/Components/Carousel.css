@@ -1,0 +1,44 @@
+.Carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1500px;
+    position: relative;
+}
+.Carousel__slide{
+    width: 100%;
+    z-index: -1;
+    mask-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0));
+    margin-bottom: -220px;
+}
+.Carousel__hidden{
+    display: none;
+}
+
+.Arrow__right{
+    right: 1rem;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    filter: drop-shadow(0px 0px 5px lightgrey);
+    z-index: 1;
+}
+
+.Arrow__left{
+    left:1rem; 
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    filter: drop-shadow(0px 0px 5px lightgrey);
+    z-index: 1;
+}
+.Arrow__left:hover{
+    cursor: pointer;
+}
+.Arrow__right:hover{
+    cursor: pointer;
+}
+
+
