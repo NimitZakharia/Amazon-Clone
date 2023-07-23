@@ -3,42 +3,48 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { auth } from "./firebase.js";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 function Login() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
+  const Signin = async (e) => {
+    e.preventDefault(); // Prevent the form from submitting
 
-  const Signin = (e) => {
-    //e.preventDefualt();
     try {
-      const user = signInWithEmailAndPassword(auth, email, password).then(
-        navigate("/")
-      )
-      console.log(auth.currentUser);
-      //logout();
-      
-    } catch (error) {
+      // Sign in the user using Firebase authentication
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
 
+      if (userCredential) {
+        console.log(auth.currentUser);
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error.message);
+      alert("User doesn't exist. Please click on Create Amazon Account.");
+    }
+  };
+
+  const Register = async () => {
+    try {
+      // Create a new user account using Firebase authentication
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+      console.log(auth.currentUser);
+      if (userCredential) {
+        navigate("/");
+      }
+    } catch (error) {
       console.log(error.message);
     }
   };
-  const Register = () => {
-    //e.preventDefualt();
-    try {
-      const user = createUserWithEmailAndPassword(auth, email, password).then(navigate('/'))
-      
-      console.log(auth.currentUser);
-      
-    } catch (error) {
-      console.log(error.message);
-    }
 
-  };
 
- 
   return (
     <div className="Login">
       <Link to="/">
