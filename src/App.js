@@ -3,6 +3,7 @@ import Header from "./Components/Navbar";
 import Home from "./Components/Home";
 import Checkout from "./Components/Checkout";
 import Login from "./Components/Login";
+import Payment from "./Components/Payment";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { auth } from "./Components/firebase";
@@ -45,6 +46,15 @@ function App() {
               <div>
                 <Header />
                 <Checkout />
+              </div>
+            }
+          />
+          <Route
+            path="/payment"
+            element={
+              <div>
+                <Header />
+                <Payment />
               </div>
             }
           />

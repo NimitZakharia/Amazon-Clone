@@ -4,7 +4,7 @@ import "./Product.css"
 
 
 function Product({id,title,image,price,rating}) {
-  const [dispatch] =useStateValue();
+  const [state,dispatch] =useStateValue();
 
   const addToCart =()=>{
     dispatch({
