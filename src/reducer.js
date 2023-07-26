@@ -23,7 +23,7 @@ const reducer =(state,action)=>{
                     newCart.splice(index,1);
                 }
                 else{
-                    console.warn('cant remove product (id: ${action.id}) as its not in basket');
+                    console.warn(`cant remove product (id: ${action.id}) as its not in basket`);
                 }
                 return{
                     ...state,

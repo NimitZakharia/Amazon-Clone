@@ -26,6 +26,7 @@ function Login() {
       }
     } catch (error) {
       console.log(error.message);
+      //alert to create an account, if account exist it takes user to home
       alert("User doesn't exist. Please click on Create Amazon Account.");
     }
   };

@@ -9,6 +9,7 @@ function Home() {
     <div className='Home'>
         <div className='Home__container'>
            <Carousel data={slides}/>
+           //added a carousel instead of one static image
             {/*<img  alt="prime-add-img" className="Home__img" src='https://m.media-amazon.com/images/I/71JFH2uM8JL._SX3000_.jpg'/>*/}
             <div className='Home__row'>
                 <Product
