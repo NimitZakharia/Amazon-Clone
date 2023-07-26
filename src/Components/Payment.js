@@ -3,8 +3,13 @@ import "./Payment.css";
 import { useStateValue } from "../stateProvider";
 import CheckoutProduct from './CheckoutProduct';
 import { Link } from "react-router-dom";
+import { getCartTotal } from '../reducer';
+import { useNavigate } from 'react-router-dom';
+import CurrencyFormat from "react-currency-format";
+
 
 function Payment() {
+  const history = useNavigate();
 
   const [{cart,user}] =useStateValue();
   let userEmail ="";
@@ -57,7 +62,21 @@ function Payment() {
                 <h3>Payment Method</h3>
             </div>
             <div className="Payment__details">
-                
+
+            <CurrencyFormat
+            renderText={(value)=>(
+                <>
+                <p>Total ({cart.length} items): <strong>{value}</strong></p>
+
+                </>
+
+            )}  
+            decimalScale={2}
+            value={getCartTotal(cart)}
+            displayType={'text'}
+            thousandSeparator={true}
+            prefix='₹'      
+        />
             </div>
         </div>
 
